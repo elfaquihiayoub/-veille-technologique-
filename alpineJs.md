@@ -58,6 +58,21 @@ A practical introduction to a small JavaScript framework
 
 ---
 
+
+
+
+
+## 1 · Plan de formation
+
+### qu est ce que un framework
+### A web page has st
+### A web page has structure — but it also needs interaction
+
+
+**The opportunity:** use a lightweight tool when a complete frontend framework would be more than the project needs.
+
+---
+
 ## 2 · The problem it solves
 
 ### A web page has structure — but it also needs interaction

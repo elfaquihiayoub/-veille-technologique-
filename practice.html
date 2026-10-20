@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <div x-data="{ count: 0 }">
+        <h2>Counter: <span x-text="count"></span></h2>
+
+        <button @click="count++">+</button>
+        <button @click="count--">-</button>
+        <button @click="count = 0">Reset</button>
+    </div>
+
+</body>
+</html>
