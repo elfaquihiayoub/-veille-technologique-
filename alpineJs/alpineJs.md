@@ -218,5 +218,3 @@ Alpine.start()
 
 - Alpine.js : actions simples dans HTML
 - Choisir l’outil selon le projet
-
----
