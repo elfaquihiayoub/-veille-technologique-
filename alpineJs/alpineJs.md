@@ -40,36 +40,56 @@ style: |
   .callout { color: #c9f7da; background: #132b2a; border: 1px solid #2c6352; border-radius: 12px; padding: 12px 16px; }
   .muted { color: #b9c8dd; }
   .tag { color: #7ee7a8; border: 1px solid #356d58; border-radius: 18px; padding: 5px 12px; font-size: .66em; }
+  section.lead .logos { display: flex; align-items: center; gap: 24px; margin-top: 12px; height: 70px; }
+  section.lead .logos img:first-child { width: 64px; height: 64px; object-fit: contain; }
+  section.lead .logos img:last-child { width: 190px; height: 70px; object-fit: cover; object-position: center 25%; }
 ---
 
 <!-- _class: lead -->
 
-<div class="eyebrow">Technology watch · Web development</div>
+<div class="eyebrow">Technical project presentation · Web development</div>
 
 # Alpine.js
 
 ## Lightweight interactivity, written in HTML
 
-A practical introduction to a small JavaScript framework
+**Prepared by:** Ayoub Elfaquihi<br>
+**Supervisor:** ES-Saraj Fouad
 
-<br>
+**Solicode Tanger — OFPPT**
 
-<span class="tag">HTML-first</span> &nbsp; <span class="tag">Reactive</span> &nbsp; <span class="tag">Lightweight</span>
+<div class="logos">
+  <img src="ofppt.png" alt="OFPPT Logo">
+  <img src="solicode.png" alt="Solicode Logo">
+</div>
 
 ---
 
+## Presentation Plan
 
+1. Introduction and context
+2. The problem Alpine.js solves
+3. What Alpine.js is
+4. How it works
+5. Live code demonstration
+6. Installation and ecosystem
+7. Comparison with other frameworks
+8. Advantages and limitations
+9. Real-world use cases
+10. Conclusion
+11. Sources and further reading
 
+---
 
+## 1 · Introduction and context
 
-## 1 · Plan de formation
+Websites are expected to respond to user actions: opening menus, switching tabs, and updating forms.
 
-### qu est ce que un framework
-### A web page has st
-### A web page has structure — but it also needs interaction
+HTML and CSS provide structure and presentation, while JavaScript adds behavior. For focused interactions, writing every DOM update by hand can be repetitive, but adopting a full frontend framework may be more than a page needs.
 
+**Alpine.js fits this middle ground:** it adds interactive behavior directly to existing HTML.
 
-**The opportunity:** use a lightweight tool when a complete frontend framework would be more than the project needs.
+<div class="callout"><strong>Objective:</strong> By the end of this presentation, you should be able to explain when Alpine.js is useful and build a simple interactive element with it.</div>
 
 ---
 
