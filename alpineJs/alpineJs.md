@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Alpine.js — Technology Watch
-description: An introduction to Alpine.js for web development
+title: Alpine.js — Présentation
+description: Une présentation simple d’Alpine.js pour le développement web
 theme: default
 paginate: true
 html: true
@@ -42,147 +42,125 @@ style: |
   .tag { color: #7ee7a8; border: 1px solid #356d58; border-radius: 18px; padding: 5px 12px; font-size: .66em; }
   section.lead .logos { display: flex; align-items: center; gap: 24px; margin-top: 12px; height: 70px; }
   section.lead .logos img:first-child { width: 64px; height: 64px; object-fit: contain; }
-  section.lead .logos img:last-child { width: 190px; height: 70px; object-fit: cover; object-position: center 25%; }
+  section.lead .logos img:last-child { width: 190px; height: 70px; object-fit: cover; object-position: center 25%; transform: translateY(-20px); }
 ---
 
 <!-- _class: lead -->
 
-<div class="eyebrow">Technical project presentation · Web development</div>
+<div class="eyebrow">Présentation technique · Développement web</div>
 
 # Alpine.js
 
-## Lightweight interactivity, written in HTML
+## Des pages web interactives avec HTML
 
-**Prepared by:** Ayoub Elfaquihi<br>
-**Supervisor:** ES-Saraj Fouad
+**Présenté par :** Ayoub El Faquihi<br>
+**Encadrant :** ES-Saraj Fouad
 
 **Solicode Tanger — OFPPT**
 
 <div class="logos">
-  <img src="ofppt.png" alt="OFPPT Logo">
-  <img src="solicode.png" alt="Solicode Logo">
+  <img src="ofppt.png" alt="Logo OFPPT">
+  <img src="solicode.png" alt="Logo Solicode">
 </div>
 
 ---
 
-## Presentation Plan
+## Plan de la présentation
 
-1. Introduction and context
-2. The problem Alpine.js solves
-3. What Alpine.js is
-4. How it works
-5. Live code demonstration
-6. Installation and ecosystem
-7. Comparison with other frameworks
-8. Advantages and limitations
-9. Real-world use cases
-10. Conclusion
-11. Sources and further reading
+1. Introduction et contexte
+2. Le problème
+3. Qu’est-ce qu’Alpine.js ?
+4. Comment ça marche ?
+5. Exemple de code
+6. Installation
+7. Avantages et limites
+8. Exemples d’utilisation
+9. Conclusion
 
 ---
 
-## 1 · Introduction and context
+## 1 · Introduction et contexte
 
-Websites are expected to respond to user actions: opening menus, switching tabs, and updating forms.
-
-HTML and CSS provide structure and presentation, while JavaScript adds behavior. For focused interactions, writing every DOM update by hand can be repetitive, but adopting a full frontend framework may be more than a page needs.
-
-**Alpine.js fits this middle ground:** it adds interactive behavior directly to existing HTML.
-
-<div class="callout"><strong>Objective:</strong> By the end of this presentation, you should be able to explain when Alpine.js is useful and build a simple interactive element with it.</div>
+- Un site web montre des informations.
+- L’utilisateur clique sur des boutons et ouvre des menus.
+- HTML crée le contenu de la page.
+- CSS change l’apparence de la page.
+- JavaScript ajoute des actions.
+- Alpine.js aide à ajouter des actions simples dans HTML.
 
 ---
 
-## 2 · The problem it solves
+## 2 · Le problème
 
-### A web page has structure — but it also needs interaction
+### Une page a du contenu et des actions
 
 | HTML / CSS | JavaScript |
 |---|---|
-| Structure and content | Responses to user actions |
-| Buttons, forms, menus | Open a menu, show a message, switch tabs |
-| Appearance and layout | Update the interface when data changes |
+| Le contenu de la page | Les actions de l’utilisateur |
+| Boutons, formulaires, menus | Ouvrir un menu, montrer un message |
+| L’apparence de la page | Changer la page |
 
-**The challenge:** for small interactions, plain JavaScript can require repetitive code to select elements, listen for events, and update the DOM.
-
-**The opportunity:** use a lightweight tool when a complete frontend framework would be more than the project needs.
+- Problème : beaucoup de code pour une petite action
+- Solution : une action simple avec Alpine.js
 
 ---
 
-## 3 · What is Alpine.js?
+## 3 · Qu’est-ce qu’Alpine.js ?
 
-<div class="eyebrow">Definition</div>
+<div class="eyebrow">Définition</div>
 
-**Alpine.js is a lightweight, open-source JavaScript framework** for adding interactive behavior to HTML pages through special attributes called *directives*.
+- Petit outil JavaScript
+- Code ouvert à tous
+- Attributs spéciaux : *directives*
 
-| Key idea | What it means |
+| Idée | Explication |
 |---|---|
-| HTML directives | Describe behavior next to the relevant elements |
-| Reactive data | The interface updates when data changes |
-| Progressive integration | Enhance an existing page without rebuilding the whole frontend |
+| Directives HTML | Elles ajoutent des actions |
+| Données qui changent | La page change quand les données changent |
+| Ajout progressif | On peut ajouter Alpine.js à une page existante |
 
-<div class="callout">Alpine.js does not replace JavaScript. It provides a convenient syntax for common UI interactions with less separate code.</div>
+- Alpine.js utilise JavaScript
+- Actions simples dans une page web
 
 ---
 
-## 4 · How does it work?
+## 4 · Comment ça marche ?
 
-### Four directives to know
+### Quatre directives utiles
 
-| Directive | Purpose | Example |
+| Directive | Action | Exemple |
 |---|---|---|
-| `x-data` | Defines a component's data | `x-data="{ open: false }"` |
-| `x-show` | Shows or hides an element | `x-show="open"` |
-| `x-on:click` / `@click` | Responds to a click | `@click="open = !open"` |
-| `x-model` | Connects an input to data | `x-model="name"` |
+| `x-data` | Crée des données | `x-data="{ open: false }"` |
+| `x-show` | Montre ou cache un élément | `x-show="open"` |
+| `x-on:click` / `@click` | Répond à un clic | `@click="open = !open"` |
+| `x-model` | Lie un champ à une donnée | `x-model="name"` |
 
-**The principle:** data defined with `x-data` is available to its child elements. Directives connect this data to events and what appears on the page.
-
-<div class="small">`@click` is shorthand for `x-on:click`.</div>
-
----
-
-## 5 · Live code demonstration
-
-### Build a button that shows and hides a message
-
-```html
-<div x-data="{ open: false }">
-  <button @click="open = !open">
-    Toggle message
-  </button>
-
-  <p x-show="open">
-    Hello, Alpine.js!
-  </p>
-</div>
-```
-
-| Step | Result |
-|---|---|
-| Initial state: `open = false` | Message is hidden |
-| First click: `open = true` | Message appears |
-| Second click: `open = false` | Message is hidden again |
-
-<div class="callout"><code>x-data</code> stores the state · <code>@click</code> changes it · <code>x-show</code> responds to it.</div>
+- `x-data` garde les données
+- Les directives changent la page
+- `@click` est une forme courte de `x-on:click`
 
 ---
 
-## 6 · Installation and ecosystem
+## 5 · Exemple de code
 
-### Two common ways to get started
+---
 
-**1 — CDN: quick to try**
+## 6 · Installation
+
+### Deux façons de commencer
+
+#### 1 · CDN
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.17.4/dist/cdn.min.js"></script>
+<script defer
+  src="https://cdn.jsdelivr.net/npm/alpinejs@3.17.4/dist/cdn.min.js">
+</script>
 ```
 
-- Add the script tag inside the HTML `<head>`.
-- Convenient for demos and simple pages.
-- Requires network access to load the library from the CDN.
+- Ajouter cette ligne dans `<head>`.
+- Une connexion Internet est nécessaire.
 
-**2 — npm: for a JavaScript project**
+#### 2 · npm
 
 ```bash
 npm install alpinejs
@@ -194,79 +172,51 @@ window.Alpine = Alpine
 Alpine.start()
 ```
 
-**Ecosystem:** Alpine.js works with existing HTML, server-rendered pages such as PHP templates, and CSS tools like Tailwind CSS. Tailwind styles the interface; Alpine.js adds behavior.
-
 ---
 
-## 7 · Alpine.js vs other frameworks
+## 7 · Avantages et limites
 
-| | Alpine.js | React | Vue.js |
-|---|---|---|---|
-| Typical fit | Small interactions in an existing page | Rich component-based interfaces | Interfaces from small to large |
-| Approach | Directives in HTML | UI built from components | Templates, components, reactivity |
-| Enhancing an existing HTML page | Very convenient | Usually needs frontend setup | Can be introduced progressively |
-| Large app conventions | More limited | Rich application ecosystem | Rich application ecosystem |
-
-**Examples:** Alpine.js for a dropdown in a PHP page; React for a complex dashboard; Vue.js to progressively enhance a page or build a structured frontend.
-
-<div class="small">These are common use cases, not strict limits. All three tools can support a range of projects.</div>
-
----
-
-## 8 · Advantages and limitations
-
-| Advantages | Limitations |
+| Avantages | Limites |
 |---|---|
-| Lightweight approach | Many interactions can make HTML harder to read |
-| Easy to learn for common interactions | Fewer built-in conventions for a large application |
-| Less separate JavaScript for common UI behavior | Complex relationships between components require careful organization |
-| Can enhance existing pages | JavaScript fundamentals are still necessary |
+| Petit et léger | Beaucoup d’actions rendent le HTML difficile à lire |
+| Facile pour des actions simples | Moins d’aide pour un grand projet |
+| Moins de code JavaScript séparé | Les composants complexes sont difficiles à organiser |
+| Fonctionne avec une page existante | Il faut connaître JavaScript |
 
-<div class="callout"><strong>Rule of thumb:</strong> choose Alpine.js for focused UI interactions; consider a larger framework when the frontend needs extensive routing, components, and complex application-wide state.</div>
+- Alpine.js : actions simples
+- Grande application : outil plus complet
 
 ---
 
-## 9 · Real-world use cases
+## 8 · Exemples d’utilisation
 
-### Interactions found on everyday websites
+### Des actions dans un site web
 
-| Component | Example |
+| Élément | Exemple |
 |---|---|
-| Dropdown menus | Expand navigation links |
-| Modals and popups | Confirm an action or display a form |
-| Tabs and accordions | Reveal a section when requested |
-| Interactive forms | Show a password or conditional fields |
-| Dashboards | Open action menus or toggle filters |
+| Menus | Montrer des liens |
+| Fenêtres | Montrer un formulaire |
+| Onglets | Montrer une partie de la page |
+| Formulaires | Montrer un mot de passe |
+| Tableaux de bord | Ouvrir un menu |
 
-**Example: a library management system**
-
-- **Alpine.js:** open an “Add a book” modal or show book details.
-- **PHP:** process requests and apply business rules.
-- **MySQL:** store books, members, and loans.
-
----
-
-## 10 · Conclusion
-
-### Four things to remember
-
-1. **What?** A lightweight JavaScript framework.
-2. **How?** HTML directives connect data, events, and the interface.
-3. **Why?** Common interactions need less separate JavaScript.
-4. **When?** When you want to enhance a page without necessarily adopting a full frontend framework.
-
-<div class="callout">Alpine.js is a simple way to add interactivity to HTML. The right choice still depends on the complexity of the project.</div>
+- Bibliothèque :
+  - Alpine.js : fenêtre pour ajouter un livre
+  - PHP : demandes
+  - MySQL : livres et membres
 
 ---
 
-## Sources and further reading
+## 9 · Conclusion
 
-- **Official website:** [alpinejs.dev](https://alpinejs.dev/)
-- **Getting started:** [alpinejs.dev/start-here](https://alpinejs.dev/start-here)
-- **Installation guide:** [alpinejs.dev/essentials/installation](https://www.alpinejs.dev/essentials/installation)
-- **`x-data` directive:** [alpinejs.dev/directives/data](https://www.alpinejs.dev/directives/data)
-- **Source code and releases:** [github.com/alpinejs/alpine](https://github.com/alpinejs/alpine)
-- **React documentation:** [react.dev](https://react.dev/)
-- **Vue.js documentation:** [vuejs.org](https://vuejs.org/guide/introduction.html)
+### À retenir
 
-<div class="small">Primary source: the official Alpine.js documentation. For production, check the latest release and pin a specific version in the CDN URL.</div>
+1. **Quoi ?** Un petit outil JavaScript.
+2. **Comment ?** Avec des directives dans HTML.
+3. **Pourquoi ?** Pour ajouter des actions avec peu de code.
+4. **Quand ?** Pour ajouter des actions à une page web.
+
+- Alpine.js : actions simples dans HTML
+- Choisir l’outil selon le projet
+
+---
