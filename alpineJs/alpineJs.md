@@ -63,6 +63,10 @@ style: |
   <img src="solicode.png" alt="Logo Solicode">
 </div>
 
+<!--
+Bonjour, je m’appelle Ayoub. Aujourd’hui, je vais vous présenter Alpine.js.
+-->
+
 ---
 
 ## Plan de la présentation
@@ -77,6 +81,10 @@ style: |
 8. Exemples d’utilisation
 9. Conclusion
 
+<!--
+Voici les étapes de ma présentation.
+-->
+
 ---
 
 ## 1 · Introduction et contexte
@@ -87,6 +95,10 @@ style: |
 - CSS change l’apparence de la page.
 - JavaScript ajoute des actions.
 - Alpine.js aide à ajouter des actions simples dans HTML.
+
+<!--
+Sur un site web, nous utilisons des boutons, des menus et des formulaires.
+-->
 
 ---
 
@@ -102,6 +114,10 @@ style: |
 
 - Problème : beaucoup de code pour une petite action
 - Solution : une action simple avec Alpine.js
+
+<!--
+Pour ajouter une petite action, JavaScript demande parfois beaucoup de code.
+-->
 
 ---
 
@@ -122,6 +138,10 @@ style: |
 - Alpine.js utilise JavaScript
 - Actions simples dans une page web
 
+<!--
+Alpine.js est un petit outil JavaScript pour ajouter des actions à une page web.
+-->
+
 ---
 
 ## 4 · Comment ça marche ?
@@ -139,9 +159,17 @@ style: |
 - Les directives changent la page
 - `@click` est une forme courte de `x-on:click`
 
+<!--
+Les directives relient les données aux actions de la page.
+-->
+
 ---
 
 ## 5 · Exemple de code
+
+<!--
+Je vais montrer cet exemple dans ma page de pratique.
+-->
 
 ---
 
@@ -172,6 +200,10 @@ window.Alpine = Alpine
 Alpine.start()
 ```
 
+<!--
+Il y a deux façons d’installer Alpine.js : avec un CDN ou avec npm.
+-->
+
 ---
 
 ## 7 · Avantages et limites
@@ -185,6 +217,10 @@ Alpine.start()
 
 - Alpine.js : actions simples
 - Grande application : outil plus complet
+
+<!--
+Alpine.js est simple pour les petites actions, mais il est moins adapté aux grands projets.
+-->
 
 ---
 
@@ -205,6 +241,10 @@ Alpine.start()
   - PHP : demandes
   - MySQL : livres et membres
 
+<!--
+Dans une bibliothèque, Alpine.js peut ouvrir une fenêtre pour ajouter un livre.
+-->
+
 ---
 
 ## 9 · Conclusion
@@ -218,3 +258,7 @@ Alpine.start()
 
 - Alpine.js : actions simples dans HTML
 - Choisir l’outil selon le projet
+
+<!--
+Alpine.js aide à ajouter des actions simples dans une page HTML.
+-->
